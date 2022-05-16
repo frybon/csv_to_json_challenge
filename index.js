@@ -86,7 +86,6 @@ async function main (file, output) {
   //split lines
   data = data.split('\n');
 
-
   //split by comma
   data.forEach((value, index) => {
     //removes ',' between '"'
@@ -179,7 +178,7 @@ async function main (file, output) {
   let eids = [];
 
   for(let i = 1; i < data.length; i++){
-    if(eids.indexOf(data[i][1]) === -1){
+    if(eids.indexOf(data[i][1]) === -1 && data[i].length >= 4){
       eids.push(data[i][1]);
       ordered.push(jsonObj[data[i][1]]);
     }
